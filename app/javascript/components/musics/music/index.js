@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading, Columns } from 'react-bulma-components';
 import styled from 'styled-components'
 import { FaPlayCircle, FaStopCircle } from "react-icons/fa";
-
+import Favorite from '../../shared/favorite';
 
 const MusicSeparator = styled.hr`
  height: 1px;
@@ -37,11 +37,11 @@ function Music(props) {
                 {props.song.title}
                </Heading>
               <CustomSubHeading size={6} className='has-text-white' subtitle>
-                {props.song.artist_name}
+                {props.song.artist_name.name}
                </CustomSubHeading>
             </Columns.Column>
             <Columns.Column desktop={{ size: 4 }} mobile={{ size: 4 }} className='is-pulled-right has-text-right'>
-              {/* Favorite */}
+              <Favorite id={props.song.id} kind='songs' favored={props.song.favorite} />
             </Columns.Column>
           </Columns>
           <MusicSeparator />

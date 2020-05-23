@@ -3,15 +3,17 @@ import { Button, Columns } from 'react-bulma-components';
 import Music from './music';
 import styled from 'styled-components';
 
+import RecentlyHeardService from '../../services/recently_heards';
+
 const PlaySequenceButton = styled(Button)`
  margin-bottom: 30px;
 `
 
 function Musics(props) {
 
+  const AudioRef = useRef();
   const [songs, setSongs] = useState([]);
   const [playing, setPlaying] = useState([]);
-  const AudioRef = useRef();
   const [playRandom, setPlayRandom] = useState(false);
 
   const NextSong = () => {
@@ -54,6 +56,7 @@ function Musics(props) {
       AudioRef.current.load();
       if (playing.id) {
         AudioRef.current.play();
+        RecentlyHeardService.create(playing.album_id);
       }
     }
   }, [playing]);
