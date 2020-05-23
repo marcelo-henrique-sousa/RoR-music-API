@@ -1,5 +1,20 @@
 {
   "name": "RoR_music",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "@rails/webpacker": "4.2.2",
+    "axios": "^0.19.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bulma-components": "^3.2.0",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
 }
